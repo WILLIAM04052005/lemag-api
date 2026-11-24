@@ -8,6 +8,11 @@ Je construire l'API du Mag, le journal de l'école, avec tout ce qu'on attend d'
 - **Article - Utilisateur : Restrict (par défaut).** Supprimer un compte ne doit pas effacer
   ses articles ni les commentaires des autres lecteurs.
 
+## Checkpoint 1
+- le SQL de ta migration Catégorie (ALTER TABLE "Categorie" ADD COLUMN "description" TEXT;, et le CREATE TABLE "Categorie" dans la migration init) ;
+- npx prisma db seed lancé deux fois sans erreur.
+
+
 ## REST vs GraphQL : la même lecture d'article
 
 Les deux appellent `articleService.trouver()` : même règle, deux contrats.
