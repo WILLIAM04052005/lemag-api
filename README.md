@@ -40,7 +40,10 @@ Une révision est un instantané complet, écrit une fois et jamais modifié, to
 `articleId` est un id PostgreSQL stocké dans Mongo : aucune clé étrangère ne relie les deux bases. La cohérence est assurée par le service : l'article est vérifié avant chaque écriture de révision, et son historique est supprimé avec lui.
 
 ## Checkpoint 4
-deux modifications en GraphQL, l'historique lu en REST, une restauration, puis la collection revisions dans Compass.
+- deux modifications en GraphQL, l'historique lu en REST, une restauration, puis la collection revisions dans Compass.
+
+## Checkpoint 5
+- Une même action, modifier un article de Léa, testée trois fois de chaque côté.
 
 * un brouillon demandé par un visiteur renvoie 404, pas 403. Un 403 dirait « cet article existe mais tu n’y as pas droit », ce qui révèle déjà une information. 
 
@@ -50,6 +53,10 @@ deux modifications en GraphQL, l'historique lu en REST, une restauration, puis l
   Bouton *Authorize* : coller le jeton obtenu via POST /api/auth/login (sans « Bearer »).
 - **GraphQL** : GraphiQL sur http://localhost:4000/graphql, onglet Documentation.
   Les descriptions sont écrites dans le schéma (`src/graphql/typeDefs.js`).
+
+## Checkpoint 6
+- ma page /docs complète (7 routes, toutes les erreurs documentées, schémas Utilisateur et Revision) ;
+- une route protégée testée depuis Swagger avec le bouton Authorize (GET /api/admin/utilisateurs : 200 avec le token admin).
 
 ## Tests
 
