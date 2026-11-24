@@ -27,6 +27,10 @@ Les deux appellent `articleService.trouver()` : même règle, deux contrats.
 - **Erreur** : REST répond HTTP 404 avec `{ erreur, code }` ; GraphQL répond HTTP 200 avec
   `data.article = null` et `errors[0].extensions.code = "NOT_FOUND"`.
 
+## Checkpoint 3
+- le même article lu en REST (curl) et en GraphQL (GraphiQL) ;
+- l'article 999 des deux côtés : 404 en REST, 200 + NOT_FOUND dans errors en GraphQL.
+
 ## Historique dans MongoDB
 
 Une révision est un instantané complet, écrit une fois et jamais modifié, toujours lu par article, et dont le contenu pourra évoluer (images, tags) : c'est un document, d'où MongoDB.
