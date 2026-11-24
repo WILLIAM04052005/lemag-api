@@ -8,6 +8,8 @@ Je construire l'API du Mag, le journal de l'école, avec tout ce qu'on attend d'
 - **Article - Utilisateur : Restrict (par défaut).** Supprimer un compte ne doit pas effacer
   ses articles ni les commentaires des autres lecteurs.
 
+## Tout les Checkpoint dans le pdf dans docs
+
 ## Checkpoint 1
 - le SQL de ta migration Catégorie (ALTER TABLE "Categorie" ADD COLUMN "description" TEXT;, et le CREATE TABLE "Categorie" dans la migration init) ;
 - npx prisma db seed lancé deux fois sans erreur.
@@ -36,6 +38,9 @@ Les deux appellent `articleService.trouver()` : même règle, deux contrats.
 Une révision est un instantané complet, écrit une fois et jamais modifié, toujours lu par article, et dont le contenu pourra évoluer (images, tags) : c'est un document, d'où MongoDB.
 
 `articleId` est un id PostgreSQL stocké dans Mongo : aucune clé étrangère ne relie les deux bases. La cohérence est assurée par le service : l'article est vérifié avant chaque écriture de révision, et son historique est supprimé avec lui.
+
+## Checkpoint 4
+deux modifications en GraphQL, l'historique lu en REST, une restauration, puis la collection revisions dans Compass.
 
 * un brouillon demandé par un visiteur renvoie 404, pas 403. Un 403 dirait « cet article existe mais tu n’y as pas droit », ce qui révèle déjà une information. 
 
