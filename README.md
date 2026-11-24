@@ -12,6 +12,10 @@ Je construire l'API du Mag, le journal de l'école, avec tout ce qu'on attend d'
 - le SQL de ta migration Catégorie (ALTER TABLE "Categorie" ADD COLUMN "description" TEXT;, et le CREATE TABLE "Categorie" dans la migration init) ;
 - npx prisma db seed lancé deux fois sans erreur.
 
+## Checkpoint 2
+- Dans graphql les catégories avec leurs articles et leurs auteurs, en une seule requête :
+{ categories { libelle articles { titre auteur { nom } } } }
+- une erreur BAD_USER_INPUT (par exemple creerArticle avec auteurId: "999").
 
 ## REST vs GraphQL : la même lecture d'article
 
