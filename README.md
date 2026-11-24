@@ -68,3 +68,7 @@ Les migrations sont appliquées automatiquement avant les tests (`tests/globalSe
 Couvert : inscription (201 sans mot de passe, 409), connexion, historique créé par une modification
 GraphQL et lu en REST, route admin (401 / 403), brouillon invisible pour un visiteur (404),
 modification de l'article d'un autre (FORBIDDEN), création sans jeton (UNAUTHENTICATED).
+
+## Checkpoint 7
+- npm test : tout vert
+- Casse volontairement un test pour le voir échouer. Par exemple, dans le test 409, remplace toBe(409) par toBe(201)
